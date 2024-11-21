@@ -5,6 +5,7 @@ ThisBuild / version := "0.1.0-SNAPSHOT"
 ThisBuild / scalaVersion := "3.5.1"
 
 lazy val root = (project in file("."))
+  .enablePlugins(ScalafmtPlugin, BuildInfoPlugin)
   .settings(
     name := "aoc2024",
     credentials ++= Seq(Credentials(Path.userHome / ".sbt" / ".credentials"), Credentials(Path.userHome / "credentials.txt")),
