@@ -11,6 +11,7 @@ lazy val root = (project in file("."))
     credentials ++= Seq(Credentials(Path.userHome / ".sbt" / ".credentials"), Credentials(Path.userHome / "credentials.txt")),
     resolvers ++= Seq("utils" at "https://pkgs.dev.azure.com/dh-platforms-devops/app-deng-nas_us/_packaging/com.pg.bigdata/maven/v1"),
     libraryDependencies ++= Seq(
-      Dependencies.Libraries.aoc
+      Dependencies.Libraries.aoc,
+      Dependencies.Libraries.enumeratum
     )
   )
