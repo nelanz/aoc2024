@@ -50,7 +50,7 @@ object Day02 extends Exercise(2024, 2) {
     }
 
     def getReportSafety: ReportSafety = {
-      val tuples     = splitIntoTuples(this.reportInput)
+      val tuples     = splitIntoTuples(reportInput)
       val directions = tuples.map(calculateDirection)
       val diffs      = tuples.map((a, b) => math.abs(a - b))
 
