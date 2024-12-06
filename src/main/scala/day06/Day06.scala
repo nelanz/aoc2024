@@ -74,9 +74,7 @@ object Day06 extends Exercise(2024, 6) {
   }
 
   private def part1(input: List[String]): Int = part1 {
-    val grid        = prepInput(input)
-    val startingRow = grid.map(_.contains('^')).indexOf(true)
-    val startingCol = grid(startingRow).indexOf('^')
+    val grid = prepInput(input)
     moveOnGrid(grid).toSet.size
   }
 }
