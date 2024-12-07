@@ -2,7 +2,6 @@ package day07
 
 import com.pg.bigdata.neighborhoodanalytics.aoc.imperative.Exercise
 import cats.Monad
-import cats.implicits._
 
 object Day07 extends Exercise(2024, 7) {
 
