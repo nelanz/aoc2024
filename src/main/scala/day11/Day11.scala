@@ -16,17 +16,17 @@ object Day11 extends Exercise(2024, 11) {
     input.flatMap(_.split(" ")).map(_.toLong)
   }
 
-  private def splitEvenStone(stone: String): List[String] = {
+  private def splitEvenStone(stone: String): List[Long] = {
     val index       = stone.length / 2
-    val firstStone  = stone.substring(0, index).toLong.toString
-    val secondStone = stone.substring(index, stone.length).toLong.toString
+    val firstStone  = stone.substring(0, index).toLong
+    val secondStone = stone.substring(index, stone.length).toLong
     List(firstStone, secondStone)
   }
 
   private def blink(stones: List[Long]): List[Long] = {
     stones.flatMap {
       case x if x == 0 => List(1)
-      case x if x.toString.length % 2 == 0 => splitEvenStone(x.toString).map(_.toLong)
+      case x if x.toString.length % 2 == 0 => splitEvenStone(x.toString)
       case x => List(x * 2024)
     }
   }
@@ -35,6 +35,7 @@ object Day11 extends Exercise(2024, 11) {
   private def blinkNTimes(stones: List[Long], n: Int): List[Long] = {
     if (n <= 0) stones
     else {
+      println(n)
       blinkNTimes(blink(stones), n - 1)
     }
   }
