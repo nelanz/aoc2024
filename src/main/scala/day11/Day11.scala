@@ -35,7 +35,6 @@ object Day11 extends Exercise(2024, 11) {
   private def blinkNTimes(stones: List[Long], n: Int): List[Long] = {
     if (n <= 0) stones
     else {
-      println(n)
       blinkNTimes(blink(stones), n - 1)
     }
   }
